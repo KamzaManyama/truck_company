@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logistics Quote Request</title>
+    <link rel="stylesheet" href="Assets/css/ShippingQuote.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="Assets/Images/logoooo.svg" sizes="32x32">
+</head>
+<body>
+    <header class="header">
+        <h1>Truck Rental Quote</h1>
+        <p>Your Reliable Source for All Types of Truck Rentals</p>
+    </header>
+
+    <div class="container">
+       <!-- Form Card -->
+<div class="card">
+    <form id="quoteForm">
+        <!-- Truck Details Section -->
+        <h2 class="section-title">Truck Rental Details</h2>
+        
+        <div class="grid grid-2">
+            <div class="form-group">
+                <label for="truck-type">Type of Truck</label>
+                <select id="truck-type" class="form-control" required>
+                    <option value="flatbed">Flatbed Truck</option>
+                    <option value="tipper">Tipper Truck</option>
+                    <option value="box">Box Truck</option>
+                    <option value="container">Container Truck</option>
+                    <option value="crane-truck">Crane Truck</option>
+                    <option value="refrigerated">Refrigerated Truck</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity Needed</label>
+                <input type="number" id="quantity" class="form-control" required>
+            </div>
+        </div>
+
+        <div class="grid grid-3">
+            <div class="form-group">
+                <label for="rental-duration">Rental Duration</label>
+                <input type="text" id="rental-duration" class="form-control" required placeholder="e.g., 1 day, 1 week">
+            </div>
+            <div class="form-group">
+                <label for="delivery-location">Delivery Location</label>
+                <input type="text" id="delivery-location" class="form-control" required placeholder="e.g., Delivery Address">
+            </div>
+            <div class="form-group">
+                <label for="project-start-date">Project Start Date</label>
+                <input type="date" id="project-start-date" class="form-control" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="truck-condition">Truck Condition Preference</label>
+            <select id="truck-condition" class="form-control" required>
+                <option value="new">Brand New</option>
+                <option value="good">Good Condition</option>
+                <option value="used">Used, but Functional</option>
+            </select>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Contact Information Section -->
+        <h2 class="section-title">Contact Information</h2>
+        
+        <div class="grid grid-2">
+            <div class="form-group">
+                <label for="company-name">Company Name</label>
+                <input type="text" id="company-name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="contact-person">Contact Person</label>
+                <input type="text" id="contact-person" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" class="form-control" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="requirements">Additional Requirements</label>
+            <textarea id="requirements" class="form-control" placeholder="Any specific truck needs or details about the project"></textarea>
+        </div>
+
+        <button type="submit" class="submit-button">Request Truck Rental Quote</button>
+    </form>
+</div>
+
+<!-- Contact Footer -->
+<div class="contact-footer">
+    <p>Need Immediate Assistance?</p>
+    <p class="phone">1-800-ZEMB-TRUCK</p>
+</div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('quoteForm');
+            const progressBar = document.getElementById('progressBar');
+            const inputs = form.querySelectorAll('input, textarea');
+            const shippingMethods = document.querySelectorAll('.shipping-method');
+
+            // Update progress bar
+            function updateProgress() {
+                const totalFields = inputs.length;
+                const filledFields = Array.from(inputs).filter(input => input.value.trim() !== '').length;
+                const progress = (filledFields / totalFields) * 100;
+                progressBar.style.width = `${progress}%`;
+            }
+
+            // Handle shipping method selection
+            shippingMethods.forEach(method => {
+                method.addEventListener('click', () => {
+                    shippingMethods.forEach(m => m.classList.remove('selected'));
+                    method.classList.add('selected');
+                });
+            });
+
+            // Add event listeners
+            inputs.forEach(input => {
+                input.addEventListener('input', updateProgress);
+            });
+
+            // Form submission
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your inquiry. Our team will contact you within 24 hours with a detailed quote.');
+            });
+        });
+    </script>
+</body>
+</html>

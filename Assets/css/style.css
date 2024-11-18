@@ -18,6 +18,10 @@ body {
     box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 
 .header {
     background: linear-gradient(to right, #002147, #003366);
@@ -72,7 +76,9 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 1rem 2rem;
-    height: 12vh;
+    height: 12vh;  
+    top: 0;
+    z-index: 1000
 }
 
 .nav-content {
@@ -80,6 +86,7 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-top: 2%;
+
 }
 
 .nav-links {
@@ -136,6 +143,7 @@ body {
 }
 
 
+
 .mobile-menu-button {
     display: none;
     background: none;
@@ -166,6 +174,7 @@ body {
 
     .nav-content {
         position: relative;
+        
     }
 
     .nav-links {
@@ -181,10 +190,12 @@ body {
         border-radius: 0 0 8px 8px;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         z-index: 1000;
+        
     }
 
     .nav-links.active {
         display: flex;
+        margin-top: 12.5%;
     }
 
     .cta-button {
@@ -219,7 +230,7 @@ body {
 
 
 .hero {
-    background-image: url('../Images/hero.jpg');
+    background-image: url('../Images/pexels-zdmit-6479995.jpg');
     background-size: cover;
     background-position: center;
     height: 750px;
@@ -239,7 +250,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.839); 
     z-index: 1;
 }
 
@@ -254,7 +265,7 @@ body {
 }
 
 .hero-content h1 {
-    font-size: 48px; 
+    font-size: 38px; 
     font-weight: 700;
     margin-bottom: 20px;
     line-height: 1.3; 
@@ -336,7 +347,7 @@ body {
 }
 
 .social-icon {
-    font-size: 30px;
+    font-size: 10px;
     margin: 0 15px;
     color: #fff;
     text-decoration: none;
@@ -347,8 +358,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 60px; 
-    height: 60px; 
+    width: 50px; 
+    height: 50px; 
 }
 
 .social-icon:hover {
@@ -379,6 +390,23 @@ body {
         height: 45px;
     }
 }
+
+/*animation for hero section*/
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.hero-content {
+  animation: fadeIn .5s ease-out;
+}
+
 
 
 
@@ -576,6 +604,93 @@ body {
     }
 }
 
+/*============================================*/
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.about-section {
+  animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes slideUp {
+  0% {
+      opacity: 0;
+      transform: translateY(50px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.about-section h2 {
+  animation: slideUp 1s ease-out;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+      opacity: 0;
+      transform: translateX(-50px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+.about-text {
+  animation: slideInFromLeft 1.2s ease-out;
+}
+
+.discover-more-btn {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.05);
+  }
+}
+
+@keyframes fadeInStats {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.stat-item {
+  animation: fadeInStats 1s ease-out;
+  animation-delay: 0.2s;
+}
+
+.stat-item:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.stat-item:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.stat-item:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
 
 /*
 ===================================================================================================================================
@@ -750,6 +865,54 @@ body {
     }
 }
 
+
+/* Keyframe for fade-in-up animation */
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Applying the animation to the section */
+.services-section {
+  animation: fadeInUp 1.5s ease-out forwards;
+}
+
+/* Animation for the section heading */
+.services-section h2 {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Animation for service cards */
+.service-card {
+  animation: fadeInUp 1s ease-out forwards;
+  opacity: 0; /* Start as invisible */
+  animation-delay: 0.2s; /* Add delay for sequential reveal */
+}
+
+/* Animation delay for sequential service cards */
+.service-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.service-card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.service-card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.service-card:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+
 /*
 ===================================================================================================================================
         Our global logistic partners
@@ -874,6 +1037,100 @@ body {
       font-size: 2rem;
     }
   }
+
+/* Keyframe for fade-in-up animation */
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Keyframe for scaling the partner logos */
+@keyframes scaleUp {
+  0% {
+      transform: scale(0.9);
+      opacity: 0;
+  }
+  100% {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+/* Keyframe for scaling the button */
+@keyframes scaleButton {
+  0% {
+      transform: scale(0.9);
+      opacity: 0;
+  }
+  100% {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+/* Applying the fadeInUp animation to section */
+.partners {
+  animation: fadeInUp 1.5s ease-out forwards;
+}
+
+/* Applying fadeInUp to the heading */
+.partners h2 {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Apply scaleUp animation to partner logos with a delay for sequential animations */
+.partner-logo {
+  animation: scaleUp 1s ease-out forwards;
+  opacity: 0; /* Start as invisible */
+}
+
+.partner-logo:nth-child(1) {
+  animation-delay: 0.3s;
+}
+
+.partner-logo:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.partner-logo:nth-child(3) {
+  animation-delay: 0.7s;
+}
+
+.partner-logo:nth-child(4) {
+  animation-delay: 0.9s;
+}
+
+/* Animation for the button */
+.partners-button {
+  animation: scaleButton 1s ease-out forwards;
+  animation-delay: 1s;
+}
+
+/* Hover Effects */
+.partner-logo:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.partner-logo img {
+  transition: filter 0.3s ease;
+}
+
+.partner-logo:hover img {
+  filter: grayscale(0%);
+}
+
+.partners-button:hover {
+  background-color: #e85a2c;
+  transform: scale(1.05);
+}
+
 
 /*
 ===================================================================================================================================
@@ -1038,6 +1295,79 @@ body {
       padding: 25px;
     }
   }
+
+
+  /* Keyframe for fade-in */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Fade-in effect for .vehicle-category */
+.vehicle-category {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+/* Fade-in effect for the heading */
+.vehicle-category h2 {
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.5s; /* Delays the heading appearance */
+}
+
+
+/* Keyframe for scale-up animation */
+@keyframes scaleUp {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Apply scale-up effect to vehicle items */
+.vehicle-category-item {
+  animation: scaleUp 1s ease-out forwards;
+}
+
+/* Hover effect for scaling */
+.vehicle-category-item:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Keyframe for button fade-in */
+@keyframes buttonFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button fade-in effect */
+.solution-button {
+  animation: buttonFadeIn 1s ease-out forwards;
+  animation-delay: 1s; /* Delays the button appearance */
+}
+
+/* Hover effect for the button */
+.solution-button:hover {
+  background-color: #e85a2c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.3);
+}
+
+
 
 /*
 ===================================================================================================================================
@@ -1269,6 +1599,209 @@ body {
       grid-template-columns: 1fr;
     }
   }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+  }
+  
+  .contact h2 {
+      text-align: center;
+      color: #1a3b5d;
+      font-size: 2.5rem;
+      margin-bottom: 60px;
+      position: relative;
+      animation: fadeIn 1s ease-out;
+  }
+  
+  .contact h2:after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background-color: #ff6b35;
+      margin: 15px auto 0;
+  }
+  
+  .contact-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      animation: slideIn 1s ease-out forwards;
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .contact-form {
+      padding: 40px;
+  }
+  
+  .contact-info {
+      margin-bottom: 30px;
+  }
+  
+  .contact-info h3 {
+      color: #1a3b5d;
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+  }
+  
+  .contact-info p {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 20px;
+  }
+  
+  .form-group {
+      margin-bottom: 25px;
+  }
+  
+  .form-group label {
+      display: block;
+      color: #1a3b5d;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+  }
+  
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+      width: 100%;
+      padding: 12px 15px;
+      border: 2px solid #e1e5ee;
+      border-radius: 8px;
+      font-size: 1rem;
+      color: #444;
+      transition: border-color 0.3s ease;
+      background: #f8f9fa;
+      animation: inputFocus 0.3s ease-in-out;
+  }
+  
+  @keyframes inputFocus {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.02);
+    }
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+      outline: none;
+      border-color: #ff6b35;
+      box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+  }
+  
+  .form-group textarea {
+      height: 120px;
+      resize: vertical;
+  }
+  
+  .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+  }
+  
+  .contact-map {
+      position: relative;
+      height: 100%;
+      min-height: 400px;
+      animation: fadeInUp 1s ease-out forwards;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .contact-map iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+  }
+  
+  .cta-button {
+      background-color: #ff6b35;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      width: 100%;
+      animation: bounce 0.3s ease-out;
+  }
+  
+  @keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+  }
+  
+  .cta-button:hover {
+      background-color: #e85a2c;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255, 107, 53, 0.2);
+  }
+  
+  .contact-info-items {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-bottom: 30px;
+      animation: fadeInUp 1.5s ease-out forwards;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
 /*
 ===================================================================================================================================
         cta buttons

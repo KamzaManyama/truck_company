@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="Assets/Images/logoooo.svg" sizes="32x32">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .hero {
+            background-color: #f59e0b;
+            color: #1a1a1a;
+            padding: 4rem 2rem;
+            text-align: center;
+            background-image: linear-gradient(rgba(245, 158, 11, 0.9), rgba(245, 158, 11, 0.9)),
+                            url('/api/placeholder/1200/400');
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .service-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .service-card h3 {
+            color: #f59e0b;
+            margin-top: 0;
+            border-bottom: 2px solid #f59e0b;
+            padding-bottom: 0.5rem;
+        }
+        .cta-section {
+            background-color: #fef3c7;
+            text-align: center;
+            padding: 4rem 2rem;
+            margin-top: 3rem;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #f59e0b;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #d97706;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #f59e0b;
+        }
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+        .specs-table td {
+            padding: 0.5rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .specs-table td:first-child {
+            font-weight: bold;
+            width: 40%;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Professional Construction Equipment</h1>
+        <p>Premium heavy machinery for construction, mining, and infrastructure projects</p>
+    </div>
+
+    <div class="container">
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>Excavators</h3>
+                <p>Versatile digging and heavy lifting equipment for construction and mining operations.</p>
+                <ul class="feature-list">
+                    <li>Multiple size options available</li>
+                    <li>Hydraulic system maintenance</li>
+                    <li>Qualified operators available</li>
+                    <li>Daily, weekly, monthly rentals</li>
+                </ul>
+                <table class="specs-table">
+                    <tr>
+                        <td>Operating Weight</td>
+                        <td>13,500 - 90,000 kg</td>
+                    </tr>
+                    <tr>
+                        <td>Max Digging Depth</td>
+                        <td>Up to 23 feet</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="service-card">
+                <h3>Loaders</h3>
+                <p>Efficient material handling equipment for construction sites and warehouses.</p>
+                <ul class="feature-list">
+                    <li>Wheel and track options</li>
+                    <li>Various bucket sizes</li>
+                    <li>Regular maintenance included</li>
+                    <li>Flexible rental terms</li>
+                </ul>
+                <table class="specs-table">
+                    <tr>
+                        <td>Bucket Capacity</td>
+                        <td>1.5 - 6.0 cubic yards</td>
+                    </tr>
+                    <tr>
+                        <td>Operating Weight</td>
+                        <td>8,000 - 50,000 kg</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="service-card">
+                <h3>Bulldozers</h3>
+                <p>Powerful earth-moving machines for large-scale construction projects.</p>
+                <ul class="feature-list">
+                    <li>High-power engines</li>
+                    <li>GPS grading systems</li>
+                    <li>Experienced operators</li>
+                    <li>Project-based rental options</li>
+                </ul>
+                <table class="specs-table">
+                    <tr>
+                        <td>Blade Capacity</td>
+                        <td>Up to 45 cubic yards</td>
+                    </tr>
+                    <tr>
+                        <td>Horsepower</td>
+                        <td>80 - 600 HP</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="service-card">
+                <h3>Graders</h3>
+                <p>Precision equipment for road construction and site preparation.</p>
+                <ul class="feature-list">
+                    <li>Laser grading capability</li>
+                    <li>Multiple blade configurations</li>
+                    <li>Training available</li>
+                    <li>24/7 support</li>
+                </ul>
+                <table class="specs-table">
+                    <tr>
+                        <td>Blade Length</td>
+                        <td>12 - 16 feet</td>
+                    </tr>
+                    <tr>
+                        <td>Operating Weight</td>
+                        <td>15,000 - 25,000 kg</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="service-card">
+                <h3>Cranes</h3>
+                <p>Heavy lifting solutions for construction and industrial applications.</p>
+                <ul class="feature-list">
+                    <li>Mobile and tower cranes</li>
+                    <li>Certified operators</li>
+                    <li>Safety inspections included</li>
+                    <li>Project planning assistance</li>
+                </ul>
+                <table class="specs-table">
+                    <tr>
+                        <td>Lift Capacity</td>
+                        <td>Up to 300 tons</td>
+                    </tr>
+                    <tr>
+                        <td>Max Height</td>
+                        <td>Up to 265 feet</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Ready to Power Your Project?</h2>
+            <p>Contact our equipment specialists for customized solutions and competitive rates.</p>
+            <a href="./constructionQuote.html" class="cta-button">Request Equipment Quote</a>
+        </div>
+
+        <div style="margin-top: 3rem;">
+            <h2>Why Choose Our Equipment?</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>Maintained Fleet</h3>
+                    <p>Regular maintenance and inspections ensure maximum uptime and safety on your job site.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Expert Support</h3>
+                    <p>Our team of certified technicians and operators provides 24/7 support for all equipment.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Flexible Terms</h3>
+                    <p>Choose from daily, weekly, or monthly rentals with competitive pricing and project-based options.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Complete Solutions</h3>
+                    <p>From equipment selection to operator training, we provide end-to-end construction equipment solutions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

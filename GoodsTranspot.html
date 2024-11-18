@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="Assets/Images/logoooo.svg" sizes="32x32">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .hero {
+            background-color: #0f172a;
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            background-image: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)),
+                            url('/api/placeholder/1200/400');
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .service-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        .service-card h3 {
+            color: #0f172a;
+            margin-top: 0;
+            border-bottom: 2px solid #0f172a;
+            padding-bottom: 0.5rem;
+        }
+        .cta-section {
+            background-color: #f8fafc;
+            text-align: center;
+            padding: 4rem 2rem;
+            margin-top: 3rem;
+            border-radius: 8px;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #0f172a;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #1e293b;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #0f172a;
+        }
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+        .specs-table td {
+            padding: 0.5rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .specs-table td:first-child {
+            font-weight: bold;
+            width: 40%;
+        }
+        .safety-badge {
+            background-color: #22c55e;
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        .certifications {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+        .cert-badge {
+            background-color: #f8fafc;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            border: 1px solid #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Commercial Truck Fleet</h1>
+        <p>Professional transportation solutions for every industry need</p>
+    </div>
+
+    <div class="container">
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>Tipper Trucks</h3>
+                <p>Specialized trucks for efficient bulk material transport and disposal.</p>
+                <ul class="feature-list">
+                    <li>Hydraulic tipping mechanism</li>
+                    <li>Heavy-duty construction</li>
+                    <li>Multiple capacity options</li>
+                    <li>GPS tracking enabled</li>
+                </ul>
+                <table class="specs-table">
+                    <tr>
+                        <td>Load Capacity</td>
+                        <td>10 - 30 tons</td>
+                    </tr>
+                    <tr>
+                        <td>Body Type</td>
+                        <td>Steel reinforced</td>
+                    </tr>
+                    <tr>
+                        <td>Tipping Angle</td>
+                        <td>Up to 45 degrees</td>
+                    </tr>
+                </table>
+                <div class="safety-badge">Safety Certified</div>
+            </div>
+
+            <div class="service-card">
+                <h3>Flatbed Trucks</h3>
+                <p>Versatile transportation for oversized and unconventional loads.</p>
+                <ul class="feature-list">
+                    <li>Easy side loading</li>
+                    <li>Secured tie-down points</li>
+                    <li>Extendable bed options</li>
+                    <li>Multi-axle configurations</li>
+                </ul>
+                <table class="specs-table">
+                    <tr>
+                        <td>Deck Length</td>
+                        <td>20 - 48 feet</td>
+                    </tr>
+                    <tr>
+                        <td>Weight Capacity</td>
+                        <td>Up to 48,000 lbs</td>
+                    </tr>
+                    <tr>
+                        <td>Deck Type</td>
+                        <td>Steel/Wood combo</td>
+                    </tr>
+                </table>
+                <div class="safety-badge">Safety Certified</div>
+            </div>
+
+            <div class="service-card">
+                <h3>Tanker Trucks</h3>
+                <p>Specialized liquid transportation with highest safety standards.</p>
+                <ul class="feature-list">
+                    <li>Hazmat certified</li>
+                    <li>Temperature control</li>
+                    <li>Multiple compartments</li>
+                    <li>Emergency shut-off systems</li>
+                </ul>
+                <table class="specs-table">
+                    <tr>
+                        <td>Capacity</td>
+                        <td>5,000 - 11,600 gallons</td>
+                    </tr>
+                    <tr>
+                        <td>Tank Material</td>
+                        <td>Stainless steel/Aluminum</td>
+                    </tr>
+                    <tr>
+                        <td>Safety Features</td>
+                        <td>Overflow protection, vapor recovery</td>
+                    </tr>
+                </table>
+                <div class="certifications">
+                    <span class="cert-badge">HAZMAT Certified</span>
+                    <span class="cert-badge">DOT Approved</span>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <h3>Dry Vans</h3>
+                <p>Secure and weather-protected transportation for sensitive cargo.</p>
+                <ul class="feature-list">
+                    <li>Climate control options</li>
+                    <li>Anti-theft locks</li>
+                    <li>Air-ride suspension</li>
+                    <li>Loading dock compatible</li>
+                </ul>
+                <table class="specs-table">
+                    <tr>
+                        <td>Interior Volume</td>
+                        <td>Up to 3,600 cu.ft.</td>
+                    </tr>
+                    <tr>
+                        <td>Door Type</td>
+                        <td>Roll-up/Swing doors</td>
+                    </tr>
+                    <tr>
+                        <td>Climate Control</td>
+                        <td>Available (-20°F to 75°F)</td>
+                    </tr>
+                </table>
+                <div class="certifications">
+                    <span class="cert-badge">Temperature Monitored</span>
+                    <span class="cert-badge">Security Certified</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Need Transportation Solutions?</h2>
+            <p>Get in touch with our logistics experts for customized shipping solutions and competitive rates.</p>
+            <a href="./TruckQuotes.html" class="cta-button">Request Quote</a>
+        </div>
+
+        <div style="margin-top: 3rem;">
+            <h2>Why Choose Our Fleet?</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>Modern Fleet</h3>
+                    <p>Latest model vehicles with advanced safety features and regular maintenance schedules.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Professional Drivers</h3>
+                    <p>Experienced, certified drivers with extensive safety training and clean records.</p>
+                </div>
+                <div class="service-card">
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock dispatch and customer service for seamless operations.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Nationwide Coverage</h3>
+                    <p>Extensive network coverage with strategic terminals across the country.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

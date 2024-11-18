@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Assets/css/DashboardAdmin.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="flex h-screen bg-gray-50">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-white shadow-lg">
+          <div class="p-4">
+            <h1 class="text-2xl font-bold text-blue-600">Zembelani</h1>
+          </div>
+          <nav class="mt-8">
+            <button class="w-full flex items-center px-6 py-3 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-colors active">
+              <span class="w-5 h-5 mr-3">icon</span>
+              Overview
+            </button>
+            <button class="w-full flex items-center px-6 py-3 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+              <span class="w-5 h-5 mr-3">icon</span>
+              Book a Vehicle
+            </button>
+            <!-- Additional nav items -->
+          </nav>
+        </aside>
+      
+        <!-- Main Content -->
+        <div class="flex-1 overflow-auto">
+          <!-- Header -->
+          <header class="bg-white shadow-sm">
+            <div class="flex items-center justify-between px-8 py-4">
+              <div class="flex items-center bg-gray-100 rounded-lg px-4 py-2 w-96">
+                <span class="w-5 h-5 text-gray-400">icon</span>
+                <input type="text" placeholder="Search orders, clients, or vehicles..." class="bg-transparent border-none focus:outline-none ml-2 w-full">
+              </div>
+              <div class="flex items-center space-x-4">
+                <div class="relative">
+                  <button class="p-2 hover:bg-gray-100 rounded-full">
+                    <span class="w-5 h-5 text-gray-600">icon</span>
+                  </button>
+                  <span class="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full"></span>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-semibold">
+                    ZT
+                  </div>
+                  <span class="text-sm font-medium">Admin User</span>
+                </div>
+                <button class="p-2 hover:bg-gray-100 rounded-full">
+                  <span class="w-5 h-5 text-gray-600">icon</span>
+                </button>
+              </div>
+            </div>
+          </header>
+      
+          <!-- Dashboard Content -->
+          <main class="p-8">
+            <!-- Admin Quick Actions -->
+            <div class="flex items-center justify-between mb-6">
+              <h2 class="text-2xl font-bold text-gray-800">Dashboard Overview</h2>
+              <div class="flex space-x-3">
+                <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 flex items-center">
+                  <span class="w-4 h-4 mr-2">icon</span>
+                  Add Vehicle
+                </button>
+                <button class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 flex items-center">
+                  <span class="w-4 h-4 mr-2">icon</span>
+                  New Client
+                </button>
+              </div>
+            </div>
+      
+            <!-- Performance Metrics Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div class="bg-white rounded-xl shadow-sm p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <div class="p-2 rounded-lg bg-blue-100">
+                    <span class="w-6 h-6 text-blue-600">icon</span>
+                  </div>
+                  <span class="text-green-500 text-sm font-medium flex items-center">
+                    +5.2%
+                    <span class="w-4 h-4 ml-1">icon</span>
+                  </span>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">Fleet Performance</h3>
+                <div class="space-y-3">
+                  <div class="flex items-center justify-between">
+                    <span class="text-gray-500">Active Vehicles</span>
+                    <span class="font-semibold">45/50</span>
+                  </div>
+                  <!-- Additional metrics -->
+                </div>
+                <div class="mt-4 text-sm text-gray-500">from last month</div>
+              </div>
+              <!-- Additional performance metric cards -->
+            </div>
+      
+            <!-- Alerts Section -->
+            <div class="bg-white rounded-xl shadow-sm p-6">
+              <h3 class="text-lg font-semibold mb-4 flex items-center">
+                <span class="w-5 h-5 mr-2 text-yellow-500">icon</span>
+                Recent Alerts
+              </h3>
+              <div class="space-y-4">
+                <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                  <div class="flex items-center">
+                    <span class="w-5 h-5 mr-3 text-yellow-500">icon</span>
+                    <span class="text-gray-700">3 vehicles due for maintenance</span>
+                  </div>
+                  <div class="flex items-center">
+                    <span class="w-4 h-4 mr-1 text-gray-400">icon</span>
+                    <span class="text-sm text-gray-500">2h ago</span>
+                  </div>
+                </div>
+                <!-- Additional alerts -->
+              </div>
+            </div>
+      
+            <!-- Activity Timeline -->
+            <div class="grid grid-cols-2 gap-6">
+              <div class="bg-white rounded-xl shadow-sm p-6">
+                <h3 class="text-lg font-semibold mb-4">Fleet Status</h3>
+                <div class="h-64">
+                  <!-- Placeholder for pie chart -->
+                </div>
+              </div>
+              <div class="bg-white rounded-xl shadow-sm p-6">
+                <h3 class="text-lg font-semibold mb-4">Delivery Performance</h3>
+                <div class="h-64">
+                  <!-- Placeholder for line chart -->
+                </div>
+              </div>
+            </div>
+          </main>
+      
+          <!-- Footer -->
+          <footer class="bg-white border-t mt-auto">
+            <div class="max-w-7xl mx-auto py-4 px-8">
+              <div class="flex items-center justify-between text-sm text-gray-500">
+                <div class="flex space-x-4">
+                  <a href="#" class="hover:text-gray-900">Terms</a>
+                  <a href="#" class="hover:text-gray-900">Privacy</a>
+                  <a href="#" class="hover:text-gray-900">Contact</a>
+                </div>
+                <div>© 2024 Zembelani Transport. All rights reserved.</div>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+</body>
+</html>

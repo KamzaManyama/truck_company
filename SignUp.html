@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logistics Company Sign Up</title>
+   <link rel="stylesheet" href="Assets/css/SignUp.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="icon" href="Assets/Images/logoooo.svg" sizes="32x32">
+</head>
+<body>
+    <div class="card">
+        <div class="logo" onclick="window.location.href='index.html';">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 17h4V5H2v12h3m15-5h2v5h-9V7h4"/>
+                <path d="M7 17h.01"/>
+                <path d="M17 17h.01"/>
+            </svg>
+        </div>
+        <div class="header">
+            <h1>Create an Account</h1>
+            <p>Join our logistics network and streamline your shipping operations</p>
+        </div>
+        <form>
+            <div class="form-group">
+                <label for="companyName">Company Name</label>
+                <input type="text" id="companyName" placeholder="Enter your company name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group password-group">
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Create a password" required>
+                </div>
+                <div>
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="businessType">Business Type</label>
+                <select id="businessType" required>
+                    <option value="" disabled selected>Select your business type</option>
+                    <option value="carrier">Carrier</option>
+                    <option value="shipper">Shipper</option>
+                    <option value="broker">Broker</option>
+                    <option value="warehouse">Warehouse</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="Enter your phone number" required>
+            </div>
+            <button type="submit">Create Account</button>
+        </form>
+        <div class="signin-link">
+            Already have an account? <a href="./LoginPage.html">Sign in</a>
+        </div>
+    </div>
+</body>
+</html>

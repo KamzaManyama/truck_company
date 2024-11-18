@@ -1,0 +1,84 @@
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.icon-circle {
+    background-color: #2563eb;
+    padding: 0.75rem;
+    border-radius: 50%;
+}
+
+.truck-icon {
+    width: 32px;
+    height: 32px;
+    fill: white;
+}
+
+.hero {
+    background-color: #1a365d;
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.service-card {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.service-card h3 {
+    color: #1a365d;
+    margin-top: 0;
+}
+.cta-section {
+    background-color: #f7fafc;
+    text-align: center;
+    padding: 4rem 2rem;
+    margin-top: 3rem;
+}
+.cta-button {
+    display: inline-block;
+    background-color: #1a365d;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-top: 1rem;
+}
+.feature-list {
+    list-style: none;
+    padding: 0;
+}
+.feature-list li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+.feature-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #48bb78;
+}

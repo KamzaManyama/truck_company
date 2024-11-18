@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logistics Quote Request</title>
+    <link rel="stylesheet" href="Assets/css/ShippingQuote.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="Assets/Images/logoooo.svg" sizes="32x32">
+</head>
+<body>
+    <header class="header">
+        <h1>Global Logistics Solutions</h1>
+        <p>Your Trusted Partner in International Shipping</p>
+    </header>
+
+    <div class="container">
+        <div class="progress-bar">
+            <div class="progress-bar-fill" id="progressBar"></div>
+        </div>
+
+        <div class="card">
+            <form id="quoteForm">
+                <!-- Shipment Details -->
+                <h2 class="section-title">Shipment Details</h2>
+                
+                <div class="grid grid-2">
+                    <div class="form-group">
+                        <label for="origin">Origin City</label>
+                        <input type="text" id="origin" class="form-control" required placeholder="e.g., New York">
+                    </div>
+                    <div class="form-group">
+                        <label for="destination">Destination City</label>
+                        <input type="text" id="destination" class="form-control" required placeholder="e.g., London">
+                    </div>
+                </div>
+
+                <div class="grid grid-3">
+                    <div class="form-group">
+                        <label for="weight">Weight (kg)</label>
+                        <input type="number" id="weight" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="volume">Volume (m³)</label>
+                        <input type="number" id="volume" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="packages">Number of Packages</label>
+                        <input type="number" id="packages" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Shipping Method</label>
+                    <div class="shipping-methods grid-3">
+                        <div class="shipping-method" data-method="ocean">
+                            <div class="shipping-method-header">
+                                <span class="shipping-method-title">Ocean Freight</span>
+                            </div>
+                            <p class="shipping-method-description">Best for large cargo</p>
+                        </div>
+                        <div class="shipping-method" data-method="air">
+                            <div class="shipping-method-header">
+                                <span class="shipping-method-title">Air Freight</span>
+                            </div>
+                            <p class="shipping-method-description">Fastest delivery times</p>
+                        </div>
+                        <div class="shipping-method" data-method="road">
+                            <div class="shipping-method-header">
+                                <span class="shipping-method-title">Road Freight</span>
+                            </div>
+                            <p class="shipping-method-description">Flexible inland options</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- Contact Information -->
+                <h2 class="section-title">Contact Information</h2>
+                
+                <div class="grid grid-2">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="requirements">Additional Requirements</label>
+                    <textarea id="requirements" class="form-control" 
+                        placeholder="Special handling instructions, delivery preferences, etc."></textarea>
+                </div>
+
+                <button type="submit" class="submit-button">Request Professional Quote</button>
+            </form>
+        </div>
+
+        <div class="contact-footer">
+            <p>Need immediate assistance?</p>
+            <p class="phone">1-800-LOGISTICS</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('quoteForm');
+            const progressBar = document.getElementById('progressBar');
+            const inputs = form.querySelectorAll('input, textarea');
+            const shippingMethods = document.querySelectorAll('.shipping-method');
+
+            // Update progress bar
+            function updateProgress() {
+                const totalFields = inputs.length;
+                const filledFields = Array.from(inputs).filter(input => input.value.trim() !== '').length;
+                const progress = (filledFields / totalFields) * 100;
+                progressBar.style.width = `${progress}%`;
+            }
+
+            // Handle shipping method selection
+            shippingMethods.forEach(method => {
+                method.addEventListener('click', () => {
+                    shippingMethods.forEach(m => m.classList.remove('selected'));
+                    method.classList.add('selected');
+                });
+            });
+
+            // Add event listeners
+            inputs.forEach(input => {
+                input.addEventListener('input', updateProgress);
+            });
+
+            // Form submission
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your inquiry. Our team will contact you within 24 hours with a detailed quote.');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logistics Quote Request</title>
+    <link rel="stylesheet" href="Assets/css/ShippingQuote.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="Assets/Images/logoooo.svg" sizes="32x32">
+</head>
+<body>
+    <header class="header" >
+        <h1 >Bus Service Quote Request</h1>
+        <p>Your Reliable Partner for All Your Travel Needs</p>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <form id="quoteForm">
+                <!-- Trip Details Section -->
+                <h2 class="section-title">Trip Details</h2>
+                
+                <div class="grid grid-2">
+                    <div class="form-group">
+                        <label for="pickup-location">Pickup Location</label>
+                        <input type="text" id="pickup-location" class="form-control" required placeholder="e.g., City Center">
+                    </div>
+                    <div class="form-group">
+                        <label for="dropoff-location">Drop-off Location</label>
+                        <input type="text" id="dropoff-location" class="form-control" required placeholder="e.g., Airport">
+                    </div>
+                </div>
+        
+                <div class="grid grid-3">
+                    <div class="form-group">
+                        <label for="date">Date of Travel</label>
+                        <input type="date" id="date" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="passengers">Number of Passengers</label>
+                        <input type="number" id="passengers" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bus-type">Bus Type</label>
+                        <select id="bus-type" class="form-control" required>
+                            <option value="standard">Standard Bus</option>
+                            <option value="luxury">Luxury Coach</option>
+                            <option value="minibus">Minibus</option>
+                        </select>
+                    </div>
+                </div>
+        
+                <div class="form-group">
+                    <label for="trip-type">Type of Trip</label>
+                    <select id="trip-type" class="form-control" required>
+                        <option value="one-way">One-Way</option>
+                        <option value="round-trip">Round-Trip</option>
+                        <option value="funeral">Funeral Trip</option>
+                        <option value="special-event">Special Event</option>
+                    </select>
+                </div>
+        
+                <div class="divider"></div>
+        
+                <!-- Contact Information Section -->
+                <h2 class="section-title">Contact Information</h2>
+                
+                <div class="grid grid-2">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-control" required>
+                    </div>
+                </div>
+        
+                <div class="form-group">
+                    <label for="requirements">Additional Requirements</label>
+                    <textarea id="requirements" class="form-control" placeholder="Special requests, timing preferences, etc."></textarea>
+                </div>
+        
+                <button type="submit" class="submit-button">Request a Bus Service Quote</button>
+            </form>
+        </div>
+        
+        <!-- Contact Footer -->
+        <div class="contact-footer">
+            <p>Need Immediate Assistance?</p>
+            <p class="phone">1-800-BUS-SERV</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('quoteForm');
+            const progressBar = document.getElementById('progressBar');
+            const inputs = form.querySelectorAll('input, textarea');
+            const shippingMethods = document.querySelectorAll('.shipping-method');
+
+            // Update progress bar
+            function updateProgress() {
+                const totalFields = inputs.length;
+                const filledFields = Array.from(inputs).filter(input => input.value.trim() !== '').length;
+                const progress = (filledFields / totalFields) * 100;
+                progressBar.style.width = `${progress}%`;
+            }
+
+            // Handle shipping method selection
+            shippingMethods.forEach(method => {
+                method.addEventListener('click', () => {
+                    shippingMethods.forEach(m => m.classList.remove('selected'));
+                    method.classList.add('selected');
+                });
+            });
+
+            // Add event listeners
+            inputs.forEach(input => {
+                input.addEventListener('input', updateProgress);
+            });
+
+            // Form submission
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your inquiry. Our team will contact you within 24 hours with a detailed quote.');
+            });
+        });
+    </script>
+</body>
+</html>

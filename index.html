@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Transportation Company</title>
+  <link rel="icon" href="Assets/Images/logoooo.svg" sizes="32x32">
+  <title>Zembelani </title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
@@ -17,7 +18,7 @@
     <div class="top-bar">
         <div class="top-bar-container">
             <div class="logo">
-                <img src="Assets/Images/business.jpg" alt="Zembelani Logistics">
+                <img src="Assets/Images/logoooo.svg" alt="Zembelani Logistics">
             </div>
             <div class="contact-info">
                 <div class="contact-item">
@@ -45,16 +46,54 @@
                 </svg>
             </button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Fleet</a></li>
-                <li><a href="#">Testimonials</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#fleet">Fleet</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="#testimonials">Testimonials</a></li>
+          </ul>
             
-            <a href="#" class="quote-button">Request a Quote</a>
+            <a href="./LoginPage.html" class="quote-button">Register Now</a>
             
+
+            <!--smooth scroll animation-->
+            <script>
+              document.querySelectorAll('.nav-links a').forEach(anchor => {
+              anchor.addEventListener('click', function(e) {
+              e.preventDefault();
+
+                  // Use window.scrollTo for smooth scroll with specific offset
+                   document.querySelector(this.getAttribute('href')).scrollIntoView({
+                   behavior: 'smooth'
+                   });
+                 });
+              });
+
+
+              // Get the navbar
+              const navbar = document.getElementById('navbar');
+
+              // Get the offset position of the navbar
+              const sticky = navbar.offsetTop;
+
+               // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+              function stickyNav() {
+              if (window.pageYOffset >= sticky) {
+                  navbar.classList.add('sticky');
+              } else {
+                  navbar.classList.remove('sticky');
+              }
+          }
+
+// When the user scrolls the page, execute stickyNav
+window.onscroll = function() {
+  stickyNav();
+};
+
+
+            </script>
+
         </div>
     </nav>
 </header>
@@ -98,17 +137,17 @@
       
       
 
-    <section class="about-section">
+    <section class="about-section" id="about">
       <div class="container">
           <h2>About Us</h2>
           <div class="about-content">
               <div class="about-text">
                   <p>Transportation Company is a leading provider of comprehensive transportation solutions, serving a diverse range of clients across various industries. With a fleet of modern, well-maintained vehicles and a team of experienced professionals, we are dedicated to delivering exceptional service and reliable transportation.</p>
                   <p>Established in 1985, our company has earned a reputation for excellence in the industry, recognized for our commitment to safety, innovation, and customer satisfaction. We proudly serve clients in the funeral, corporate, logistics, and membership/society sectors, tailoring our services to meet their unique needs.</p>
-                  <a href="#" class="discover-more-btn">Discover Our Journey</a>
+                  <a href="./DiscoverOurJourney.html" class="discover-more-btn">Discover Our Journey</a>
               </div>
               <div class="about-image">
-                  <img src="Assets/Images/business.jpg" alt="Transportation Company Fleet">
+                  <img src="Assets/Images/tiper.jpg" alt="Transportation Company Fleet">
               </div>
           </div>
 
@@ -137,14 +176,14 @@
     
     
 
-  <section class="services-section">
+  <section class="services-section"  id="services">
     <div class="container">
         <h2>Our Services</h2>
         <div class="services-grid">
             <!-- Funeral Transport -->
             <div class="service-card">
                 <div class="service-image">
-                    <img src="Assets/Images/busses.jpg" alt="Funeral Transport Services">
+                    <img src="Assets/Images/bussesssPet.jpg" alt="Funeral Transport Services">
                 </div>
                 <div class="service-content">
                     <div class="service-icon">
@@ -153,9 +192,9 @@
                             <circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/>
                         </svg>
                     </div>
-                    <h3 class="service-title">Funeral Transport</h3>
+                    <h3 class="service-title">Transport</h3>
                     <p class="service-description">Professional and dignified transportation services for funeral ceremonies, ensuring respectful and timely arrangements with our dedicated fleet and experienced team.</p>
-                    <a href="#" class="explore-service-btn">
+                    <a href="./TransportationInfo.html" class="explore-service-btn">
                         Learn More
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -167,7 +206,7 @@
             <!-- Group Transport -->
             <div class="service-card">
                 <div class="service-image">
-                    <img src="Assets/Images/group.jpg" alt="Group Transport Services">
+                    <img src="Assets/Images/loader.jpg" alt="Group Transport Services">
                 </div>
                 <div class="service-content">
                     <div class="service-icon">
@@ -177,9 +216,9 @@
                             <path d="M12 2v13"/>
                         </svg>
                     </div>
-                    <h3 class="service-title">Group Transport</h3>
+                    <h3 class="service-title">Construction Equipment:</h3>
                     <p class="service-description">Comprehensive group transportation solutions for corporate events, community gatherings, and social functions. We ensure comfortable and punctual service.</p>
-                    <a href="#" class="explore-service-btn">
+                    <a href="./ConstructionEquipment.html" class="explore-service-btn">
                         Learn More
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -191,7 +230,7 @@
             <!-- Goods Transport -->
             <div class="service-card">
                 <div class="service-image">
-                    <img src="Assets/Images/truckss.jpg" alt="Goods Transport Services">
+                    <img src="Assets/Images/tanker (1).jpg" alt="Goods Transport Services">
                 </div>
                 <div class="service-content">
                     <div class="service-icon">
@@ -204,7 +243,7 @@
                     </div>
                     <h3 class="service-title">Goods Transport</h3>
                     <p class="service-description">Efficient and reliable logistics solutions for your cargo needs. We handle everything from small parcels to large freight with care and precision.</p>
-                    <a href="#" class="explore-service-btn">
+                    <a href="./GoodsTranspot.html" class="explore-service-btn">
                         Learn More
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -229,7 +268,7 @@
                     </div>
                     <h3 class="service-title">Membership & Society</h3>
                     <p class="service-description">Exclusive benefits and priority booking for our members. Join our partnership program to access premium services and special rates.</p>
-                    <a href="#" class="explore-service-btn">
+                    <a href="./PartnershipProgram.html" class="explore-service-btn">
                         Become a Member
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -262,7 +301,7 @@
           <p>Raubex Construction<br> construction company</p>
         </a>
       </div>
-      <a href="#" class="partners-button">Become a Partner</a>
+      <a href="./PartnershipProgram.html" class="partners-button">Become a Partner</a>
     </div>
 </section>
   
@@ -273,8 +312,8 @@
       <div class="cta-content">
         <h2>Trusted Logistics Solutions</h2>
         <p>At Zembelani Transport, we ensure safe, timely, and secure delivery for all your shipments. Rely on us for seamless logistics and a team committed to safeguarding your cargo.</p>
-        <a href="#" class="cta-button">
-            Become a member    
+        <a href="./EquipmentFleet.html" class="cta-button">
+            explore our fleet    
         </a>
         
       </div>
@@ -282,7 +321,7 @@
   </section>
   
 
-<section class="vehicle-category">
+<section class="vehicle-category" id="fleet">
   <div class="container">
     <h2>Our Advanced Fleet Solutions</h2>
     <p>Experience the power of modern logistics with our diverse fleet of vehicles. Each category is carefully maintained and equipped with advanced tracking systems to ensure reliable, efficient, and secure transportation services.</p>
@@ -313,13 +352,13 @@
       </div>
     </div>
     
-    <a href="#contact" class="solution-button">Get Custom Quote</a>
+    <a href="./ShippingQuote.html" class="solution-button">Get Custom Quote</a>
   </div>
 </section>
 
 
 
-<section class="contact">
+<section class="contact" id="contact">
   <div class="container">
     <h2>Contact Our Logistics Team</h2>
     <div class="contact-content">
@@ -404,7 +443,7 @@
     </div>
 </section>
 
-<section class="testimonials">
+<section class="testimonials" id="testimonials">
     <div class="container">
       <h2>Client Success Stories</h2>
       <div class="testimonial-grid">
